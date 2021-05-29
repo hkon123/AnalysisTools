@@ -5,12 +5,14 @@
 #include "attribute.h"
 #include <string>
 #include <vector>
+#include "ParseFile.h"
+#include <fstream>
 
-using namespace Attr;
+//using namespace Attr;
 
 int main()
 {
-    Attribute A;
+    /*Attribute A;
     std::string in = "test";
     A.setValues(category::numeric, in);
 
@@ -27,6 +29,15 @@ int main()
     std::cout << A.addCase("4") << std::endl;
 
     A.printName();
+    */
+
+    std::vector<Attr::Attribute> data;
+    std::string path = "../../data/weather.nominal.arff";
+
+    data = ParseFile::parseArffFile(path);
+    for (int i = 0; i < data.size(); i++) {
+        data.at(i).printName();
+    }
 
     return 0;
 }

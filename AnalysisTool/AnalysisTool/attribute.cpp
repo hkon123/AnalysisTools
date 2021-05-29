@@ -53,8 +53,21 @@ bool Attribute::addCase(std::string input) {
 }
 
 void Attribute::printName() {
-	cout << "Attribute name is: " << Attribute::name << std::endl;
-
+	cout << "Attribute name is: " << Attribute::name;
+	switch (Attribute::aType) {
+	case category::list:
+		cout << ", type is: list" << std::endl;
+		break;
+	case category::numeric:
+		cout << ", type is: numeric" << std::endl;
+		break;
+	case category::other:
+		cout << ", type is: other" << std::endl;
+		break;
+	default:
+		cout << ", type is: unknow ERROR!" << std::endl;
+		break;
+	}
 	if (Attribute::aType == category::list) {
 		std::vector<std::string>::iterator iter = Attribute::types.begin();
 		std::vector<std::string>::iterator end = Attribute::types.end();
