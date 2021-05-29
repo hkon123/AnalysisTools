@@ -32,13 +32,13 @@ int main()
     */
 
     std::vector<Attr::Attribute> data;
-    std::string path = "../../data/weather.nominal.arff";
+    std::string path = "../../data/labor.arff";
 
     data = ParseFile::parseArffFile(path);
     for (int i = 0; i < data.size(); i++) {
         data.at(i).printName();
     }
-
+    //system("pause");
     return 0;
 }
 

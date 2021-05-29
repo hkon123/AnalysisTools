@@ -40,13 +40,15 @@ bool Attribute::addCase(std::string input) {
 		stringstream ss(input);
 		ss >> num;
 		if (ss.eof()) {
-			Attribute::numericCases.push_back(num);
+			struct number n = { num, true };
+			Attribute::numericCases.push_back(n);
 			Attribute::initIndex++;
 			return true;
 		}
 		else {
-			//Attribute::numericCases.push_back(NAN);
-			//Attribute::initIndex++;
+			struct number n = { 0, false };
+			Attribute::numericCases.push_back(n);
+			Attribute::initIndex++;
 			return false;
 		}
 	}
@@ -83,7 +85,12 @@ void Attribute::printName() {
 				cout << "case " << i << ": " << Attribute::stringCases[i] << std::endl;
 			}
 			else {
-				cout << "case " << i << ": " << Attribute::numericCases[i] << " test: " << Attribute::numericCases[i] + 1 << std::endl;
+				if (Attribute::numericCases[i].isFilled) {
+					cout << "case " << i << ": " << Attribute::numericCases[i].value << " test: " << Attribute::numericCases[i].value + 1 << std::endl;
+				}
+				else {
+					cout << "case " << i << ": empty" << std::endl;
+				}
 			}
 		}
 	}

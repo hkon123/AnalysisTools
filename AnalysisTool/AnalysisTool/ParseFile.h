@@ -17,6 +17,7 @@ namespace ParseFile {
 	input getInputType(std::string);
 	std::string pruneString(std::string);
 	std::vector<std::string> cleanStringVector(std::vector<std::string>);
+	
 
 
 }
