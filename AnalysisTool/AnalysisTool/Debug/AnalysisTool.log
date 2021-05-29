@@ -1,2 +1,3 @@
-﻿  attribute.cpp
-  AnalysisTool.vcxproj -> C:\Users\hkonh\source\repos\AnalysisTool\Debug\AnalysisTool.exe
+﻿  AnalysisTool.cpp
+C:\Users\hkonh\Documents\Programmering\AnalysisTools\AnalysisTool\AnalysisTool\AnalysisTool.cpp(38,23): warning C4018: '<': signed/unsigned mismatch
+  AnalysisTool.vcxproj -> C:\Users\hkonh\Documents\Programmering\AnalysisTools\AnalysisTool\Debug\AnalysisTool.exe
